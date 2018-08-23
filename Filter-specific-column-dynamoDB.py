@@ -4,9 +4,9 @@ dynamodbResource = boto3.resource('dynamodb')
 
 def lambda_handler(event, context):
     tableName = 'abc'
-    columnName = 'searchname'
+    columnName = 'ColumnB'
     columnValue = 'searchvalue'
-    onlyColumns = "Selectcolumn"
+    onlyColumns = "ColumnA"
     table = dynamodbResource.Table(tableName)
     response = table.scan(
         Select='SPECIFIC_ATTRIBUTES',
